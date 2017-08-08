@@ -9,8 +9,43 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var con = {
+    content:"Hi this some text",
+    tile:"Krunal's App"
+    
+};
+
+
+function createTemplate(data){
+    var title=data.title;
+    var content = data.content;
+    
+    var htmlTemplate=`<!doctype html>
+<html>
+    <head>
+        <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    <body>
+    <h1>${title}</h1>
+        <div class="center">
+            <img src="/ui/madi.png" class="img-medium"/>
+        </div>
+        <br>
+        <div class="center text-big bold">
+       ${content}
+        </div>
+        <script type="text/javascript" src="/ui/main.js">
+        </script>
+    </body>
+</html>`
+    
+    
+}
+
+
+
 app.get('/articleOne',function(req,res){
-    res.send("This is one article page");
+    res.send(createTemplate(con));
 });
 
 app.get('/ui/style.css', function (req, res) {
