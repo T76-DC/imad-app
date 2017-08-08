@@ -11,7 +11,7 @@ app.get('/', function (req, res) {
 
 app.get('/articleOne',function(req,res){
     res.send("This is one article page");
-})
+});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
