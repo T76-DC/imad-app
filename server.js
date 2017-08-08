@@ -11,7 +11,7 @@ app.get('/', function (req, res) {
 
 var con = {
     content:"Hi this some text",
-    tile:"Krunal's App"
+    title:"Krunal's App"
     
 };
 
